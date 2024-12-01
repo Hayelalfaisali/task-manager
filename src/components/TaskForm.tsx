@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, ChangeEvent } from 'react';
 import styled from 'styled-components';
 import { Task } from '../types';
 import { IoAdd } from 'react-icons/io5';
@@ -28,6 +28,16 @@ export const TaskForm: React.FC<TaskFormProps> = ({ onSubmit }) => {
     setStatus('todo');
     setPriority('medium');
     setIsModalOpen(false);
+  };
+
+  const handleStatusChange = (e: ChangeEvent<HTMLSelectElement>) => {
+    const value = e.target.value as Task['status'];
+    setStatus(value);
+  };
+
+  const handlePriorityChange = (e: ChangeEvent<HTMLSelectElement>) => {
+    const value = e.target.value as Task['priority'];
+    setPriority(value);
   };
 
   return (
@@ -72,7 +82,7 @@ export const TaskForm: React.FC<TaskFormProps> = ({ onSubmit }) => {
                   <Select
                     id="status"
                     value={status}
-                    onChange={(e) => setStatus(e.target.value)}
+                    onChange={handleStatusChange}
                   >
                     <option value="todo">To Do</option>
                     <option value="in-progress">In Progress</option>
@@ -85,7 +95,7 @@ export const TaskForm: React.FC<TaskFormProps> = ({ onSubmit }) => {
                   <Select
                     id="priority"
                     value={priority}
-                    onChange={(e) => setPriority(e.target.value)}
+                    onChange={handlePriorityChange}
                   >
                     <option value="low">Low</option>
                     <option value="medium">Medium</option>
