@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 import { Droppable } from 'react-beautiful-dnd';
 import { TaskCard } from './TaskCard';
@@ -6,7 +5,7 @@ import { Task } from '../types';
 import { FaTasks, FaSpinner, FaCheckCircle } from 'react-icons/fa';
 
 interface TaskColumnProps {
-  columnId: string;
+  id: string;
   title: string;
   tasks: Task[];
   onEditTask: (task: Task) => void;

@@ -5,15 +5,15 @@ import { IoAdd } from 'react-icons/io5';
 import { IoMdClose } from 'react-icons/io';
 
 interface TaskFormProps {
-  onSubmit: (task: Omit<Task, 'id'>) => void;
+  onSubmit: (task: Omit<Task, 'id' | 'createdAt'>) => void;
 }
 
 export const TaskForm: React.FC<TaskFormProps> = ({ onSubmit }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
-  const [status, setStatus] = useState('todo');
-  const [priority, setPriority] = useState('medium');
+  const [status, setStatus] = useState<Task['status']>('todo');
+  const [priority, setPriority] = useState<Task['priority']>('medium');
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -21,8 +21,7 @@ export const TaskForm: React.FC<TaskFormProps> = ({ onSubmit }) => {
       title,
       description,
       status,
-      priority,
-      createdAt: new Date().toISOString(),
+      priority
     });
     setTitle('');
     setDescription('');
