@@ -19,7 +19,7 @@ A modern, responsive task management application built with React, TypeScript, a
 ![Task Board](/public/image1.png)
 *Main interface showing the Kanban-style board with task columns*
 
-### Task Creation
+### Task Creation Layout
 ![Add Task](/public/image2.png)
 *Task creation form with priority selection*
 
