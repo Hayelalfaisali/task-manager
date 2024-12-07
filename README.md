@@ -23,7 +23,7 @@ A modern, responsive task management application built with React, TypeScript, a
 ![Add Task](/public/image2.png)
 *Task creation form with priority selection*
 
-### Task Details
+### Task Details Layout
 ![Task Details](/public/image3.png)
 *Detailed task view with editing capabilities*
 
