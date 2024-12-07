@@ -1,4 +1,4 @@
-# Task Manager
+# Task Manager app
 
 A modern, responsive task management application built with React, TypeScript, and styled-components. Features a drag-and-drop interface for managing tasks across different status columns.
 
